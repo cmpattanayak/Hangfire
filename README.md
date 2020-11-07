@@ -88,3 +88,10 @@ By default, all buttons are read only in hangfire dashboard. If you wish to make
 ```
 IsReadOnlyFunc = (DashboardContext context) => false,
 ```
+If you navigate to Dashboard Jobs Screen - the page will look like following.
+
+![dashboard](https://github.com/cmpattanayak/Hangfire/blob/master/hangfire_dashboard_01.JPG)
+
+Click a Job ID to see the Progress/Status/Logs.
+
+![dashboard](https://github.com/cmpattanayak/Hangfire/blob/master/hangfire_dashboard_02.JPG)
