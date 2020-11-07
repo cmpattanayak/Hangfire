@@ -3,7 +3,7 @@
 Hangfire provides an easy way to perform background processing in .NET and .NET Core applications. No Windows Service or separate process required.
 It is backed by persistent storage. Background jobs are created in a persistent storage – SQL Server, Redis, PostgreSQL, MongoDB etc. 
 You can safely restart your application and use Hangfire with ASP.NET without worrying about application pool recycles.
-Hangfire is open and free for commercial use.
+Hangfire comes with a built-in dashboard. You just need to plug and play. Hangfire is open and free for commercial use.
 ## Job Types
   - Fire and forget job (are executed only once and almost immediately after creation, can be triggered on certain events)
   - Delayed jobs (are executed only once too, but not immediately, after a certain time interval) 
