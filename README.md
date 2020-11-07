@@ -88,6 +88,12 @@ By default, all buttons are read only in hangfire dashboard. If you wish to make
 ```
 IsReadOnlyFunc = (DashboardContext context) => false,
 ```
+## Deployment
+Run server and dashboard projects independently. Once server starts, dashboard will refresh automatically.
+In reality, dashboard keeps refreshing automatically when any event happens. If you have a client app, you can run
+it separately as well. In this example I do not have a client, actual job is present within server. However it is
+always better to create separate layers for separate operations.
+
 If you navigate to Dashboard Jobs Screen - the page will look like following.
 
 ![dashboard](https://github.com/cmpattanayak/Hangfire/blob/master/hangfire_dashboard_01.JPG)
