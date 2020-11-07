@@ -4,6 +4,11 @@ Hangfire provides an easy way to perform background processing in .NET and .NET 
 It is backed by persistent storage. Background jobs are created in a persistent storage – SQL Server, Redis, PostgreSQL, MongoDB etc. 
 You can safely restart your application and use Hangfire with ASP.NET without worrying about application pool recycles.
 Hangfire is open and free for commercial use.
+## Job Types
+  - Fire and forget job (are executed only once and almost immediately after creation, can be triggered on certain events)
+  - Delayed jobs (are executed only once too, but not immediately, after a certain time interval) 
+  - Recurring jobs (recurring jobs fire many times on the specified CRON schedule)
+  - Continuations (are executed when its parent job has been finished)
 ## What I have used in this project
 1. Asp.Net Core 3.1
 2. Hangfire 1.7.x (Following Nuget Packages)
@@ -11,12 +16,7 @@ Hangfire is open and free for commercial use.
    - Hangfire.SqlServer
    - Hangfire.Console
 3. I have used Sql Server for Storage
-## Job Types
-  - Fire and forget job (are executed only once and almost immediately after creation, can be triggered on certain events)
-  - Delayed jobs (are executed only once too, but not immediately, after a certain time interval) 
-  - Recurring jobs (recurring jobs fire many times on the specified CRON schedule)
-  - Continuations (are executed when its parent job has been finished)
- ## Scheduler Components
+## Scheduler Components
  1. **Server** - 
  It is the most important component of Hangfire Schedulers. It has to run continuously, so when time comes, it will execute specific job(s).
  A console application can fulfill this requirement.
@@ -25,10 +25,10 @@ Hangfire is open and free for commercial use.
  3. **Dashboard (Optional)** - 
  If you want to monitor job related activities like how many jobs have succeeded/failed or in process or if you want to log stepwise execution progress, you may require a dashboard.
  This has to be a web application (in this case Asp.Net Core Web Application).
- ### What is common in these three components 
+### What is common in these three components 
  You might be thinking how these three apps are interlinked to each other. Well, the answer is the Sql Server connection. 
  You need to provide the same Sql Server connection string in each of these applications.
- ## Server Configuration
+## Server Configuration
  Use following simple configurations during start up (Main method).
  ```
  GlobalConfiguration.Configuration.SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
@@ -95,3 +95,6 @@ If you navigate to Dashboard Jobs Screen - the page will look like following.
 Click a Job ID to see the Progress/Status/Logs.
 
 ![dashboard](https://github.com/cmpattanayak/Hangfire/blob/master/hangfire_dashboard_02.JPG)
+
+### Reference
+https://www.hangfire.io/
